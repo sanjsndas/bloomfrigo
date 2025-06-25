@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bloomfigo Garden Therapy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --secondary: #8BC34A;
+            --accent: #FFC107;
+            --dark: #2E7D32;
+            --light: #F1F8E9;
+            --pink: #F06292;
+            --purple: #BA68C8;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 10px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .contact-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('p2.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-point {
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-point h3 {
+            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-form input, 
+        .contact-form textarea {
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-3xl font-bold text-green-800 flex items-center">
+                        <i class="fas fa-leaf mr-3 text-green-600"></i> 
+                        Bloomfigo
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero with Form -->
+    <section class="contact-hero">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-90 p-8 rounded-xl">
+                <h1 class="text-4xl font-bold text-green-800 mb-6">Contact Bloomfigo</h1>
+                <p class="text-xl text-gray-700 mb-8">We'd love to hear from you! Reach out for inquiries, feedback, or to schedule a consultation.</p>
+                
+                <form class="contact-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name" class="px-4 py-2 border rounded-lg">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com" class="px-4 py-2 border rounded-lg">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" class="px-4 py-2 border rounded-lg w-full">
+                    </div>
+                    <div class="mt-4">
+                        <label for="subject" class="block text-gray-700 mb-2">Subject <span class="text-red-500">*</span></label>
+                        <select id="subject" name="subject" required class="px-4 py-2 border rounded-lg w-full">
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="booking">Service Booking</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="media">Media Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <label for="message" class="block text-gray-700 mb-2">Message <span class="text-red-500">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message..." class="px-4 py-2 border rounded-lg w-full"></textarea>
+                    </div>
+                    <div class="mt-6">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-bold shadow-md transition">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Content -->
+    <main class="py-20 bg-white">
+        <div class="contact-section">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-green-800 mb-4">Comprehensive Contact Information</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Multiple ways to reach our gardening therapy team</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>1. General Inquiries</h3>
+                <p>For all general questions about our horticultural therapy services, please email info@bloomfigo.com or call our main line. Our team typically responds within 1-2 business days. For faster responses, consider checking our comprehensive FAQ section here. We're happy to provide information about our various programs and offerings. General inquiries help us understand common needs and improve our services. We welcome all questions about the benefits of gardening therapy. Our team is knowledgeable about all aspects of our operations.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>2. Booking Appointments</h3>
+                <p>Schedule therapy sessions through our online booking portal or by phone. For complex cases, our staff can help match you with the right therapist. Group bookings require advance notice of at least two weeks. We accommodate special requests when possible with sufficient notice. Cancellations follow our 24-hour notice policy. Session confirmations are sent via your preferred contact method. Waitlists are available for fully booked time slots.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>3. Location Information</h3>
+                <p>Our flagship therapy garden is located at 838 Broadway, New York with wheelchair access. Parking is available in nearby garages with validated rates. Public transit is recommended with multiple subway lines nearby. Detailed directions are available on our Getting Here page. We have satellite locations in three other boroughs - inquire for availability. Facility tours can be scheduled Tuesday through Thursday afternoons.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>4. Business Hours</h3>
+                <p>Main facility hours are Monday-Saturday 8am-8pm, Sunday 9am-5pm. Therapy sessions run continuously throughout the day. Administrative offices operate Monday-Friday 9am-5pm. Holiday schedules vary and are posted seasonally. After-hours emergency contacts are for current clients only. Special extended hour sessions may be arranged in advance.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>5. Mailing Address</h3>
+                <p>For all written correspondence, including partnership proposals and media inquiries: Bloomfigo Gardens, 838 Broadway, Suite 502, New York, NY 10003. Please allow 7-10 days for response to mailed inquiries. Express or certified mail is recommended for time-sensitive materials. Include clear contact information for return correspondence. We're unable to accept walk-in deliveries without prior arrangement.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>6. Phone Contacts</h3>
+                <p>Main line: (123) 456-7890 (answered during business hours). Client services: Ext. 2 for scheduling and account questions. Billing department: Ext. 3 for payments and insurance. Press inquiries: Ext. 4 for media professionals. Emergency after-hours support is available for current clients only. International callers may use +1 (212) 456-7890. Our phone system provides estimated wait times and callback options.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>7. Email Contacts</h3>
+                <p>General: info@bloomfigo.com (answered within 48 hours). Support: help@bloomfigo.com for technical issues. Billing: payments@bloomfigo.com for invoices. Media: press@bloomfigo.com for journalists. Careers: jobs@bloomfigo.com for employment inquiries. Partnerships: corp@bloomfigo.com for collaboration. Emails are routed automatically to the appropriate department for faster service.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>8. Emergency Contacts</h3>
+                <p>For medical emergencies during sessions, alert staff immediately. Our facilities have AEDs and first aid trained personnel. After-hours clinical emergencies for current clients: (123) 555-6789. For facility emergencies after hours, contact building security. In life-threatening situations, always call 911 first. We maintain relationships with nearby medical providers familiar with horticultural therapy protocols.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>9. Social Media</h3>
+                <p>Connect with us on Instagram @bloomfigo for daily gardening inspiration. Facebook: facebook.com/bloomfigo for event announcements. LinkedIn for professional networking and job postings. Twitter @bloomfigocare for quick updates. Pinterest for gardening therapy idea boards. We monitor DMs during business hours but encourage email for complex inquiries. Tag us in your therapeutic gardening photos!</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>10. Accessibility Accommodations</h3>
+                <p>Our facilities meet ADA requirements with wheelchair accessible gardens. Service animals are welcome with proper documentation. Sign language interpreters can be arranged with two weeks notice. Large print materials are available upon request. We offer sensory-friendly sessions in our Quiet Garden area. Contact us in advance to discuss any special needs for your visit.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>11. Partnerships and Sponsorships</h3>
+                <p>We collaborate with healthcare providers, schools, and community organizations. Corporate wellness programs can be customized for your workforce. Media partnerships help spread awareness of horticultural therapy benefits. Grant opportunities support underserved community access to our programs. Download our partnership prospectus for details. Initial inquiries should include proposed collaboration details and timeline.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>12. Media Inquiries</h3>
+                <p>Journalists should contact our PR team at press@bloomfigo.com. Expert interviews can be arranged with our therapy team (lead time required). Photography and filming policies vary by location and subject matter. We maintain a library of approved images for media use. Our media kit includes organizational background and key messages. Please allow 3-5 business days for response to media requests.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>13. Speaking Engagements</h3>
+                <p>Our therapists are available for speaking events with sufficient notice. Topics include horticultural therapy benefits, program design, and case studies. Honorariums vary based on event type and preparation required. Submit requests at least 6 weeks prior for consideration. We prioritize events aligned with our mission and values. Virtual presentations are available with our professional AV setup.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>14. Volunteer Opportunities</h3>
+                <p>Volunteers are essential to maintaining our therapeutic gardens. Individuals and groups can apply through our volunteer portal. Minimum 4-month commitment preferred for garden volunteers. Training is provided for all positions. Court-ordered service may be accommodated with prior approval. Background checks are required for certain roles. Volunteer applications are reviewed quarterly.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>15. Research Participation</h3>
+                <p>We collaborate with universities studying horticultural therapy outcomes. Current research opportunities are listed on our website. Participation is always voluntary with informed consent. Clinical trials follow strict ethical guidelines. Researchers can propose studies through our academic portal. Results of past research are available in our resource library.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>16. Career Opportunities</h3>
+                <p>Current job openings are posted monthly on our careers page. Horticultural therapists must have relevant certifications. Benefits include continuing education stipends and garden access. Submit resumes through our applicant tracking system only. No unsolicited resume submissions please. The hiring process typically takes 4-6 weeks from application to decision.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>17. Internship Programs</h3>
+                <p>We offer clinical internships for horticultural therapy students. Academic credit must be arranged through your institution. Applications are due March 1 for summer and October 1 for spring. Minimum 16 hours/week for 12 weeks is required. Interns gain hands-on experience with diverse client populations. References are available for successful completions.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>18. Donations and Support</h3>
+                <p>Tax-deductible donations support our community outreach programs. Memorial gifts can honor loved ones with garden plaques. In-kind donations of tools and plants are accepted when pre-approved. Corporate matching gift programs maximize your contribution. Monthly giving provides sustainable support. Contact our development team to discuss major gift opportunities.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>19. Facility Rentals</h3>
+                <p>Our gardens are available evenings for special events. Capacity ranges from 20-200 guests depending on space. Alcohol requires approved servers and insurance certificates. Setup and cleanup times must be included in rental periods. Preferred vendor list available for catering and services. Non-profit rates available with documentation.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>20. Customer Service</h3>
+                <p>Our client services team resolves issues within 3 business days. Satisfaction surveys follow each interaction for quality assurance. Service recovery protocols address any shortcomings in care. Feedback helps improve our programs and processes. Complaints are escalated to department supervisors when needed. We aim for first-contact resolution whenever possible.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>21. Feedback and Suggestions</h3>
+                <p>We welcome constructive feedback through our contact form or in person. Anonymous feedback can be submitted via our website. Suggestions for new programs or improvements are encouraged. We review all feedback during our monthly staff meetings. Your input directly influences our service offerings. Thank you for helping us enhance the Bloomfigo experience.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>22. FAQs</h3>
+                <p>Our FAQ section addresses common questions about services, pricing, and policies. We update this section regularly based on client inquiries. If your question isn't answered, please reach out directly. FAQs cover topics from session types to payment methods. We aim to provide clear and concise answers. Your questions help us improve our communication.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>23. Community Events</h3>
+                <p>We host seasonal community events to promote gardening and wellness. Check our events calendar for upcoming workshops and gatherings. Participation is open to all, with some events requiring registration. Community events foster connections among participants. We encourage sharing experiences and knowledge. Volunteers are always welcome to assist with events.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>24. Gardening Resources</h3>
+                <p>Our website features a resource library with articles and guides on gardening therapy. Topics include plant care, therapeutic benefits, and gardening techniques. We also provide downloadable resources for personal use. Our blog shares success stories and tips from our therapists. We encourage you to explore these resources to enhance your gardening journey. Feedback on resource usefulness is appreciated.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>25. Sustainability Practices</h3>
+                <p>Bloomfigo is committed to sustainable gardening practices. We use organic methods and native plants to support local ecosystems. Our facilities incorporate rainwater harvesting and composting. Educational programs emphasize environmental stewardship. We encourage clients to adopt sustainable practices at home. Your participation in sustainability efforts helps our community thrive.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>26. Client Testimonials</h3>
+                <p>We value client feedback and share testimonials on our website. Success stories highlight the impact of gardening therapy on mental health. Clients can opt to remain anonymous in their testimonials. We encourage sharing your experience to inspire others. Testimonials help us improve our services and reach more individuals. Your voice matters in our community.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>27. Gardening Workshops</h3>
+                <p>Our workshops cover various topics, from basic gardening skills to advanced techniques. Participants learn hands-on skills in a supportive environment. Workshops are scheduled throughout the year, with registration available online. We provide all necessary materials for participants. Feedback from past attendees helps shape future workshops. Join us to enhance your gardening knowledge and skills.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>28. Special Programs</h3>
+                <p>We offer specialized programs for veterans, seniors, and individuals with disabilities. These programs are tailored to meet unique needs and promote inclusivity. Registration for special programs may have specific requirements. We collaborate with local organizations to enhance program offerings. Feedback from participants helps us refine these programs. Your participation enriches our community.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>29. Gardening Therapy Benefits</h3>
+                <p>Research shows that gardening therapy can reduce stress and improve mental health. Engaging with nature promotes physical activity and social interaction. Our therapists guide clients in using gardening as a therapeutic tool. We provide resources on the psychological benefits of gardening. Join our programs to experience these benefits firsthand. Your wellbeing is our priority.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>30. Client Privacy</h3>
+                <p>Your privacy is important to us, and we adhere to strict confidentiality policies. Personal information is only shared with your consent or as required by law. We maintain secure systems to protect your data. Our privacy policy outlines how we handle your information. You can request access to your records at any time. We are committed to transparency in our practices.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>31. Insurance and Payment Options</h3>
+                <p>We accept various insurance plans for therapy services. Clients are encouraged to verify coverage before scheduling. Payment plans are available for those without insurance. We provide detailed invoices for reimbursement purposes. Our billing department is available to assist with any questions. Financial assistance options may be available for qualifying clients.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>32. Client Rights</h3>
+                <p>Clients have the right to receive respectful and professional care. You can voice concerns or complaints without fear of retaliation. Participation in therapy is voluntary, and you can withdraw at any time. We encourage open communication about your treatment goals. Your feedback is essential to improving our services. We are here to support your journey.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>33. Cultural Competence</h3>
+                <p>Our team is trained in cultural competence to serve diverse populations. We respect and honor the unique backgrounds of all clients. Programs are designed to be inclusive and accessible. We welcome feedback on how to improve cultural sensitivity. Your experiences and perspectives enrich our community. We strive to create a welcoming environment for everyone.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>34. Gardening for Mental Health</h3>
+                <p>Gardening has been shown to alleviate symptoms of anxiety and depression. Engaging with plants fosters a sense of purpose and accomplishment. Our therapists incorporate gardening into treatment plans for mental health. We provide resources on the connection between gardening and mental wellness. Join our programs to explore these therapeutic benefits. Your mental health matters to us.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>35. Community Partnerships</h3>
+                <p>We collaborate with local organizations to enhance our services. Partnerships expand access to gardening therapy for underserved populations. We welcome inquiries from potential partners interested in collaboration. Community engagement is vital to our mission. Together, we can make a greater impact. Your organization can help us reach more individuals in need.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>36. Gardening Events Calendar</h3>
+                <p>Our events calendar lists all upcoming workshops, community events, and special programs. We encourage you to participate and engage with our community. Registration links are provided for easy sign-up. Check back regularly for updates and new offerings. We aim to provide diverse opportunities for learning and connection. Your involvement enriches our community.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>37. Client Support Groups</h3>
+                <p>We offer support groups for clients to share experiences and build connections. These groups are facilitated by trained therapists. Participation is voluntary and confidential. Support groups provide a safe space for discussion and healing. We encourage clients to engage with peers for mutual support. Your voice and experiences are valued in these groups.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>38. Gardening Therapy Research</h3>
+                <p>We participate in ongoing research to study the effects of gardening therapy. Findings contribute to the growing body of evidence supporting horticultural therapy. Clients may be invited to participate in research studies. Participation is voluntary and confidential. Research outcomes help us improve our programs and services. Your involvement can help advance the field of gardening therapy.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>39. Client Satisfaction Surveys</h3>
+                <p>We conduct regular surveys to assess client satisfaction with our services. Your feedback helps us identify areas for improvement. Surveys are anonymous and confidential. We review results to enhance our programs and client experience. Participation is encouraged but not mandatory. Your insights are invaluable to our mission.</p>
+            </div>
+
+            <div class="contact-point">
+                <h3>40. Thank You for Connecting</h3>
+                <p>We appreciate your interest in Bloomfigo and look forward to connecting with you. Your inquiries and feedback help us grow and improve. Please reach out with any questions or concerns. Together, we can cultivate a thriving community through gardening therapy. Thank you for being a part of our journey!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-6 bg-green-800 text-white">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Bloomfigo. All rights reserved.</p>
+            <p>Address: 838 Broadway, New York, NY 10003, USA | Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+</body>
+</html>
